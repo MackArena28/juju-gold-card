@@ -1,0 +1,416 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:transparent;
+
+    color:white;
+
+    font-family:Inter,sans-serif;
+
+    overflow:hidden;
+
+}
+
+
+
+/* =====================
+        LOADER
+===================== */
+
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050505;
+
+    padding-top:140px;
+
+    z-index:20;
+
+    transition:opacity 1.5s ease;
+
+}
+
+
+#loader h1{
+
+    font-family:Cinzel,serif;
+
+    font-size:42px;
+
+    letter-spacing:4px;
+
+    color:#D6B25E;
+
+}
+
+
+
+#loader p{
+
+    margin-top:15px;
+
+    font-size:16px;
+
+    letter-spacing:3px;
+
+}
+
+
+
+/* BARRE */
+
+.progress{
+
+    width:320px;
+
+    height:8px;
+
+    background:#222;
+
+    border-radius:50px;
+
+    margin:30px 0;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #8f6b18,
+        #f7e19b,
+        #d7a100
+    );
+
+    animation:loading 4s forwards;
+
+}
+
+
+
+@keyframes loading{
+
+    from{
+
+        width:0%;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+/* FLASH */
+
+#flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#d8b15f;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:30;
+
+}
+
+
+
+/* =====================
+        APP
+===================== */
+
+
+.hidden{
+
+    display:none;
+
+}
+
+
+#app{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    background:#090909;
+
+    opacity:1;
+
+    overflow:hidden;
+
+}
+
+
+
+#app:not(.hidden){
+
+    animation:appear 1.5s forwards;
+
+}
+
+
+
+@keyframes appear{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/* =====================
+        FRESQUE
+===================== */
+
+
+.illustration{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1;
+
+    opacity:0;
+
+    transform:scale(1.08);
+
+    transition:
+        opacity 3s ease,
+        transform 4s ease;
+
+    pointer-events:none;
+
+}
+
+
+
+#app:not(.hidden) .illustration{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+
+#fresque{
+
+    width:900px;
+
+    max-width:90vw;
+
+    opacity:.75;
+
+}
+
+
+
+/* =====================
+        GOLD CARD
+===================== */
+
+
+.gold-card{
+
+    width:340px;
+
+    height:210px;
+
+    border-radius:22px;
+
+    position:relative;
+
+    z-index:2;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #0c0c0c,
+        #262626
+    );
+
+
+    border:1px solid rgba(214,178,94,.45);
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    0 0 50px rgba(214,178,94,.15);
+
+}
+
+
+
+/* TEXTE CARTE */
+
+
+.card-content{
+
+    text-align:center;
+
+    transform:translateY(40px);
+
+    z-index:2;
+
+}
+
+
+
+.card-content h2{
+
+    font-family:Cinzel,serif;
+
+    font-size:38px;
+
+    letter-spacing:6px;
+
+    color:#D6B25E;
+
+}
+
+
+
+.card-content p{
+
+    margin:8px 0 20px;
+
+    font-family:Cinzel,serif;
+
+    font-size:18px;
+
+    letter-spacing:5px;
+
+    color:#D6B25E;
+
+}
+
+
+
+.card-content span{
+
+    font-family:Cinzel,serif;
+
+    font-size:20px;
+
+    letter-spacing:8px;
+
+    color:white;
+
+}
+
+
+
+/* REFLET */
+
+
+.shine{
+
+    position:absolute;
+
+    width:140px;
+
+    height:300px;
+
+    background:rgba(255,255,255,.18);
+
+    transform:rotate(30deg);
+
+    left:-200px;
+
+    animation:shine 4s infinite;
+
+}
+
+
+
+@keyframes shine{
+
+    from{
+
+        left:-200px;
+
+    }
+
+    to{
+
+        left:600px;
+
+    }
+
+}
+.gold-card{
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
